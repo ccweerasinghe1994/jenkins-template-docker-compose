@@ -5,7 +5,7 @@ services:
     container_name: traefik
     restart: unless-stopped
     networks:
-      - web
+      - proxy
     # Enables the web UI and tells Traefik to listen to docker
     command: --api.insecure=true --providers.docker
     ports:
@@ -30,6 +30,6 @@ services:
       - "traefik.http.routers.whoami.rule=Host(`whoami.ccweerasinghe.me`)"
       - "traefik.http.routers.whoami.entrypoints=web"  
 networks:
-  web:
+  proxy:
     external: true
 
