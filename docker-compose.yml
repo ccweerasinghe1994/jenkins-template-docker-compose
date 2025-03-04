@@ -2,7 +2,7 @@ services:
   traefik:
     # The official v3 Traefik docker image
     image: traefik:v3.3
-    container_name: traefik-demo-1
+    container_name: traefik
     restart: unless-stopped
     networks:
       - web
