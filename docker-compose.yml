@@ -5,7 +5,7 @@ services:
     container_name: traefik-demo-1
     restart: unless-stopped
     networks:
-      - frontend
+      - web
     # Enables the web UI and tells Traefik to listen to docker
     command: --api.insecure=true --providers.docker
     ports:
