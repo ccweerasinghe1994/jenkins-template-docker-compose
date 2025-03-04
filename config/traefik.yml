@@ -24,5 +24,6 @@ entryPoints:
     address: :443
 providers:
   docker: 
+    defaultRule: "Host(`{{ trimPrefix `/` .Name }}.docker.localhost`)"
     exposedByDefault: false
     

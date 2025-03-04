@@ -5,11 +5,11 @@ services:
     restart: unless-stopped
     networks:
       - proxy
-    command: --api.insecure=true --providers.docker
+    command: --api.insecure=true --providers.docker=true
     ports:
-      - "80:80"
-      - "8080:8080"
-      - "443:443"
+      - 80:80
+      - 8080:8080
+      - 443:443
     environment:
       - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
     volumes:
