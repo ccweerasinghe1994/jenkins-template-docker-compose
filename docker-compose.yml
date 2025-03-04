@@ -20,7 +20,7 @@ services:
     volumes:
       # So that Traefik can listen to the Docker events
       - /var/run/docker.sock:/var/run/docker.sock # For Windows with Docker Desktop
-      - ./config/traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./config/traefik.yml:/etc/traefik/traefik.yml
       - ./data/certs/:/var/traefik/certs/:rw
 
 networks:
