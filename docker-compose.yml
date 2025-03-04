@@ -22,7 +22,13 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock # For Windows with Docker Desktop
       - ./config/traefik.yml:/etc/traefik/traefik.yml
       - ./data/certs/:/var/traefik/certs/:rw
-
+  whoami:
+    image: "traefik/whoami"
+    container_name: "simple-service"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.rule=Host(`whoami.ccweerasinghe.me`)"
+      - "traefik.http.routers.whoami.entrypoints=web"  
 networks:
   web:
     external: true
